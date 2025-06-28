@@ -1,148 +1,163 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PINZY Payment</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Courier New', monospace;
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to bottom right, #0f1c1c, #112b3c);
       color: white;
       text-align: center;
-      padding: 40px;
-      margin: 0;
     }
-
+    .logo {
+      margin-top: 30px;
+    }
+    .logo img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc55;
+    }
     h1 {
-      font-size: 24px;
-      margin-top: 20px;
+      margin: 10px 0;
+      letter-spacing: 3px;
+      font-size: 1.8rem;
     }
-
-    button {
-      background-color: black;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      cursor: pointer;
-      font-size: 16px;
+    .btn-container {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .btn {
+      background: black;
+      padding: 12px 20px;
       border-radius: 8px;
-      transition: background-color 0.3s;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
     }
-
-    button:hover {
-      background-color: #444;
+    .btn:hover {
+      background: #00ffc3;
+      color: black;
     }
-
     footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #ccc;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaaaaa;
+    }
+    footer span {
+      color: yellow;
     }
 
-    .highlight {
-      color: #ffcc00;
-    }
-
-    img.logo {
-      width: 200px;
-      margin-bottom: 10px;
-    }
-
-    /* Overlay & Modal */
+    /* Overlay */
     .overlay {
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: none;
-      justify-content: center;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
       align-items: center;
+      justify-content: center;
       z-index: 999;
+      display: none;
     }
-
-    .modal {
-      background: #222;
-      padding: 25px;
-      border-radius: 10px;
-      max-width: 90%;
+    .overlay-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
       text-align: center;
       position: relative;
     }
-
-    .modal img {
-      width: 220px;
-      border: 2px solid #ffcc00;
+    .overlay-content img {
+      max-width: 80vw;
+      max-height: 70vh;
       border-radius: 10px;
-      margin-top: 10px;
+      box-shadow: 0 0 15px #00ffc3;
     }
-
-    .modal p {
-      color: #ffcc00;
-      font-size: 18px;
-      margin: 10px 0;
+    .overlay-content p {
+      color: #00ffc3;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: transparent;
-      color: white;
-      font-size: 24px;
-      border: none;
+    .close-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #00ffc3;
+      color: black;
       cursor: pointer;
+      font-weight: bold;
+    }
+    .close-btn:hover {
+      background: #00ffaa;
     }
   </style>
 </head>
 <body>
-  <img src="https://files.catbox.moe/lxlp0h.jpg" alt="PINZY LOGO" class="logo" />
-  <h1>PAYMENT &nbsp; PINZY &nbsp; OFFC</h1>
 
-  <div>
-    <button onclick="showModal('62895373244456 (DANA)')">NOMOR DANA PINZY</button>
-    <button onclick="showModal('62895373244456 (GOPAY)')">NOMOR GOPAY PINZY</button>
-    <button onclick="showModal('62895373244456 (OVO)')">NOMOR OVO PINZY</button>
-    <button onclick="showModal('', 'https://files.catbox.moe/v7i6ec.jpg')">QRIS PINZY</button>
+  <div class="logo">
+    <img src="https://files.catbox.moe/lxlp0h.jpg" alt="PINZY Logo" />
+  </div>
+
+  <h1>PAYMENT PINZY OFFC</h1>
+
+  <div class="btn-container">
+    <div class="btn" onclick="showText('628123456789 (DANA)')">NOMOR DANA PINZY</div>
+    <div class="btn" onclick="showText('628987654321 (GOPAY)')">NOMOR GOPAY PINZY</div>
+    <div class="btn" onclick="showText('6281122334455 (OVO)')">NOMOR OVO PINZY</div>
+    <div class="btn" onclick="showQRIS()">QRIS PINZY</div>
   </div>
 
   <footer>
-    &copy; Copyright <span class="highlight">PinzyHost</span>
+    © Copyright <span>PinzyHost</span>
   </footer>
 
-  <!-- Modal -->
-  <div class="overlay" id="popupOverlay" onclick="hideModal(event)">
-    <div class="modal" id="popupModal">
-      <button class="close" onclick="hideModal(event)">&times;</button>
-      <p id="popupText"></p>
-      <img id="popupImage" style="display: none;" />
+  <!-- Overlay QRIS -->
+  <div class="overlay" id="popup">
+    <div class="overlay-content">
+      <img src="https://files.catbox.moe/v7i6ec.jpg" alt="QRIS PINZY" />
+      <p>Scan QRIS untuk Pembayaran</p>
+      <div class="close-btn" onclick="hidePopup()">TUTUP</div>
+    </div>
+  </div>
+
+  <!-- Overlay Text Number -->
+  <div class="overlay" id="textPopup">
+    <div class="overlay-content">
+      <p id="paymentText"></p>
+      <div class="close-btn" onclick="hidePopup()">TUTUP</div>
     </div>
   </div>
 
   <script>
-    function showModal(text = '', imageUrl = '') {
-      const overlay = document.getElementById('popupOverlay');
-      const textEl = document.getElementById('popupText');
-      const imgEl = document.getElementById('popupImage');
-
-      textEl.textContent = text;
-      if (imageUrl) {
-        imgEl.src = imageUrl;
-        imgEl.style.display = 'block';
-      } else {
-        imgEl.style.display = 'none';
-      }
-
-      overlay.style.display = 'flex';
+    function showQRIS() {
+      document.getElementById('popup').style.display = 'flex';
     }
 
-    function hideModal(event) {
-      if (event.target.id === 'popupOverlay' || event.target.className === 'close') {
-        document.getElementById('popupOverlay').style.display = 'none';
-      }
+    function showText(text) {
+      document.getElementById('paymentText').innerText = text;
+      document.getElementById('textPopup').style.display = 'flex';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('textPopup').style.display = 'none';
+    }
+
+    // Tutup popup jika klik di luar konten
+    window.onclick = function(event) {
+      const popup = document.getElementById('popup');
+      const textPopup = document.getElementById('textPopup');
+      if (event.target === popup) popup.style.display = 'none';
+      if (event.target === textPopup) textPopup.style.display = 'none';
     }
   </script>
+
 </body>
 </html>
