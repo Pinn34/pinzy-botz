@@ -2,78 +2,107 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>𝙋𝙞𝙣𝙯𝙮 𝙋𝙖𝙮𝙢𝙚𝙣𝙩</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .logo {
-            margin-top: 20px;
-            width: 200px;
-            border-radius: 20px;
-        }
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #fff;
-            white-space: nowrap;
-            margin: 20px auto;
-            letter-spacing: .15em;
-            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-            font-size: 20px;
-            max-width: 90%;
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: white }
-        }
-        .button {
-            margin: 10px;
-            padding: 12px 24px;
-            font-size: 18px;
-            background: #111;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .button:hover {
-            background: #333;
-        }
-        .qris {
-            margin-top: 20px;
-            width: 250px;
-            border-radius: 10px;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #ccc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PINZY Payment</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .logo {
+      margin-top: 20px;
+      width: 180px;
+      border-radius: 15px;
+    }
+    .typewriter-container {
+      max-width: 90%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .typewriter {
+      border-right: .15em solid #fff;
+      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+      font-size: 20px;
+      letter-spacing: .1em;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+    .button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #333;
+    }
+    .output {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    .qris-img {
+      margin-top: 20px;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-    <img src="assets/pinzy_center.jpg" alt="Pinzy Logo" class="logo" />
+  <img src="https://i.ibb.co/Xf0XXZB/pinzy-center.jpg" alt="Pinzy Logo" class="logo" />
+  
+  <div class="typewriter-container">
     <div class="typewriter">𝙋𝘼𝙔𝙈𝙀𝙉𝙏 𝙋𝙄𝙉𝙕𝙔 𝙊𝙁𝙁𝘾</div>
-    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
-    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
-    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
-    <button class="button">𝙌𝙍𝙄𝙎 𝙋𝙄𝙉𝙕𝙔</button>
-    <img src="assets/qris.png" alt="QRIS Pinzy" class="qris" />
-    <footer>© Copyright 𝙋𝙞𝙣𝙯𝙮𝙃𝙤𝙨𝙩</footer>
+  </div>
+
+  <button class="button" onclick="showText('087889308331 (DANA)')">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showText('0857xxxxxx (GOPAY)')">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showText('0812xxxxxx (OVO)')">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showQR()">𝙌𝙍𝙄𝙎 𝙋𝙄𝙉𝙕𝙔</button>
+
+  <div class="output" id="output"></div>
+  <div id="qrisContainer" style="display: none;">
+    <img id="qrisImage" src="https://i.ibb.co/p3LT5yt/qris-pinzy.png" class="qris-img" alt="QRIS Pinzy" />
+  </div>
+
+  <footer>© Copyright <strong>𝙋𝙞𝙣𝙯𝙮𝙃𝙤𝙨𝙩</strong></footer>
+
+  <script>
+    function showText(text) {
+      document.getElementById('output').innerText = text;
+      document.getElementById('qrisContainer').style.display = 'none';
+    }
+
+    function showQR() {
+      document.getElementById('output').innerText = 'Scan QRIS di bawah ini:';
+      document.getElementById('qrisContainer').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
