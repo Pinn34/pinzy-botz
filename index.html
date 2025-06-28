@@ -2,192 +2,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>𝙋𝙞𝙣𝙯𝙮𝙊𝙛𝙛𝙘 - 𝙎𝙘𝙧𝙞𝙥𝙩 𝙋𝙧𝙚𝙢𝙞𝙪𝙢</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body, html {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    video.background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.5);
-    }
-
-    header {
-      text-align: center;
-      padding: 150px 20px 50px;
-    }
-
-    header h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 8px black;
-    }
-
-    header p {
-      font-size: 1.2em;
-      opacity: 0.8;
-    }
-
-    .product {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-    }
-
-    .product h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    .badge {
-      background-color: crimson;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 0.8em;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-bottom: 10px;
-    }
-
-    ul li::before {
-      content: "• ";
-      color: #0f0;
-    }
-
-    .benefits li::before {
-      content: "✔ ";
-      color: #0f0;
-    }
-
-    .security {
-      margin-top: 10px;
-      font-size: 0.9em;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px;
-      border-left: 4px solid crimson;
-    }
-
-    .contact {
-      text-align: center;
-      margin: 40px 20px;
-    }
-
-    .contact button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: crimson;
-      border: none;
-      color: white;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .contact button:hover {
-      background-color: darkred;
-    }
-
-    .links a {
-      color: #0ff;
-      margin: 0 5px;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>𝙋𝙞𝙣𝙯𝙮 𝙋𝙖𝙮𝙢𝙚𝙣𝙩</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .logo {
+            margin-top: 20px;
+            width: 200px;
+            border-radius: 20px;
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #fff;
+            white-space: nowrap;
+            margin: 20px auto;
+            letter-spacing: .15em;
+            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+            font-size: 20px;
+            max-width: 90%;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+        .button {
+            margin: 10px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #333;
+        }
+        .qris {
+            margin-top: 20px;
+            width: 250px;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
-
-  <video autoplay muted loop playsinline class="background">
-    <source src="https://qu.ax/pyqCP.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <header>
-    <h1>𝙋𝙞𝙣𝙯𝙮 𝙊𝙛𝙛𝙞𝙘𝙞𝙖𝙡</h1>
-    <p><em>*𝙈𝙚𝙣𝙮𝙚𝙙𝙞𝙖𝙠𝙖𝙣 𝙎𝙘𝙧𝙞𝙥𝙩 𝙋𝙧𝙚𝙢𝙞𝙪𝙢 𝘽𝙚𝙧𝙠𝙪𝙖𝙡𝙞𝙩𝙖𝙨 100%*</em></p>
-  </header>
-
-  <section class="product">
-    <h2>𝙎𝙮𝙧𝙚𝙣 𝙄𝙣𝙫𝙞𝙘𝙩𝙪𝙨 <span class="badge">v5</span></h2>
-    <ul>
-      <li>NO UP - Rp 10.000</li>
-      <li>FREE UP 1X - Rp 15.000</li>
-      <li>RESELLER SCRIPT - Rp 25.000</li>
-      <li>OWNER SCRIPT - Rp 35.000</li>
-      <li>PARTNER SCRIPT - Rp 40.000</li>
-      <li>T.KANAN SC - Rp 45.000</li>
-      <li>MODZ - Rp 50.000</li>
-    </ul>
-  </section>
-
-  <section class="product">
-    <h2>𝙕𝙮𝙩𝙝𝙚𝙧𝙖 𝙄𝙣𝙫𝙞𝙘𝙩𝙪𝙨 <span class="badge">v7</span></h2>
-    <ul>
-      <li>ENC NO UP - Rp 5.000</li>
-      <li>NO ENC FREE UP 1X - Rp 15.000</li>
-      <li>RESELLER - Rp 20.000</li>
-      <li>OWNER - Rp 25.000</li>
-      <li>PARTNER - Rp 30.000</li>
-    </ul>
-    <h3>𝘽𝙚𝙣𝙚𝙛𝙞𝙩?:</h3>
-    <ul class="benefits">
-      <li>✔ VIA WHATSAPP</li>
-      <li>✔ BUG HARD</li>
-      <li>✔ DELAY HARD</li>
-      <li>✔ INVISIBLE CRASH</li>
-      <li>✔ FUNCTION NEW</li>
-      <li>✔ AUTO C1</li>
-      <li>✔ DIAJARIN CARA PASANG</li>
-      <li>✔ FORCLOSE (TERGNTUNG HP)</li>
-      <li>✔ BULLDOZER (NYEDOT KOUTA TARGET SAMPE HABISS)</li>
-    </ul>
-    <div class="security">
-      <strong>𝘼𝙡𝙡 𝙎𝙘𝙧𝙞𝙥𝙩 𝙎𝙚𝙘𝙪𝙧𝙞𝙩𝙮:</strong> Ber Password, AddDB (Database), Enc Hard (Sulit di Crack)
-    </div>
-  </section>
-
-  <section class="contact">
-    <h3>𝗠𝗶𝗻𝗮𝘁 𝗕𝘂𝘆??</h3>
-    <p>𝗖𝗵𝗮𝘁 (𝗣𝗶𝗻𝘇𝘆)</p>
-    <button onclick="window.location.href='https://wa.me/6287889308331'">𝗪𝗵𝗮𝘁𝘀𝗮𝗽𝗽</button>
-    <div class="links">
-      <a href="https://whatsapp.com/channel/0029VbBMHZN1t90UcipUjD3A">𝙇𝙞𝙣𝙠 𝘾𝙝 𝙐𝙩𝙖𝙢𝙖</a> | 
-      <a href="https://whatsapp.com/channel/0029Vb5vBkwHltYHgVtYgQ2g">𝗟𝗶𝗻𝗸 𝗧𝗲𝘀𝘁𝗶𝗺𝗼𝗻𝗶</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 𝟮𝟬𝟮𝟱 ⚔️ 𝗣𝗶𝗻𝘇𝘆𝗢𝗳𝗳𝗰. All Rights Reserved.</p>
-  </footer>
-
+    <img src="assets/pinzy_center.jpg" alt="Pinzy Logo" class="logo" />
+    <div class="typewriter">𝙋𝘼𝙔𝙈𝙀𝙉𝙏 𝙋𝙄𝙉𝙕𝙔 𝙊𝙁𝙁𝘾</div>
+    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
+    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
+    <button class="button">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
+    <button class="button">𝙌𝙍𝙄𝙎 𝙋𝙄𝙉𝙕𝙔</button>
+    <img src="assets/qris.png" alt="QRIS Pinzy" class="qris" />
+    <footer>© Copyright 𝙋𝙞𝙣𝙯𝙮𝙃𝙤𝙨𝙩</footer>
 </body>
 </html>
