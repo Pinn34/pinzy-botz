@@ -3,118 +3,145 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PINZY Payment</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Courier New', monospace;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 20px;
       text-align: center;
+      padding: 40px;
+      margin: 0;
     }
 
-    .logo {
-      margin-top: 20px;
-      width: 180px;
-      border-radius: 15px;
-    }
-
-    .typewriter-container {
-      max-width: 90%;
-      overflow: hidden;
-      white-space: nowrap;
+    h1 {
+      font-size: 24px;
       margin-top: 20px;
     }
 
-    .typewriter {
-      border-right: .15em solid #fff;
-      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
-      font-size: 20px;
-      letter-spacing: .1em;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: white }
-    }
-
-    .button {
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 18px;
-      background: #111;
+    button {
+      background-color: black;
       color: white;
       border: none;
-      border-radius: 10px;
+      padding: 12px 24px;
+      margin: 10px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
 
-    .button:hover {
-      background: #333;
-    }
-
-    .output {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #ffcc00;
-      font-weight: bold;
-    }
-
-    .qris-img {
-      margin-top: 20px;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    button:hover {
+      background-color: #444;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 14px;
       color: #ccc;
+    }
+
+    .highlight {
+      color: #ffcc00;
+    }
+
+    img.logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+
+    /* Overlay & Modal */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal {
+      background: #222;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal img {
+      width: 220px;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .modal p {
+      color: #ffcc00;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <img src="https://files.catbox.moe/lxlp0h.jpg" alt="Pinzy Logo" class="logo" />
-  
-  <div class="typewriter-container">
-    <div class="typewriter">𝙋𝘼𝙔𝙈𝙀𝙉𝙏 𝙋𝙄𝙉𝙕𝙔 𝙊𝙁𝙁𝘾</div>
+  <img src="https://files.catbox.moe/lxlp0h.jpg" alt="PINZY LOGO" class="logo" />
+  <h1>PAYMENT &nbsp; PINZY &nbsp; OFFC</h1>
+
+  <div>
+    <button onclick="showModal('62895373244456 (DANA)')">NOMOR DANA PINZY</button>
+    <button onclick="showModal('62895373244456 (GOPAY)')">NOMOR GOPAY PINZY</button>
+    <button onclick="showModal('62895373244456 (OVO)')">NOMOR OVO PINZY</button>
+    <button onclick="showModal('', 'https://files.catbox.moe/v7i6ec.jpg')">QRIS PINZY</button>
   </div>
 
-  <button class="button" onclick="showText('62895373244456 (DANA)')">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
-  <button class="button" onclick="showText('Belum Tersedia (GOPAY)')">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
-  <button class="button" onclick="showText('Belum Tersedia (OVO)')">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
-  <button class="button" onclick="showQR()">𝙌𝙍𝙄𝙎 𝙋𝙄𝙉𝙕𝙔</button>
+  <footer>
+    &copy; Copyright <span class="highlight">PinzyHost</span>
+  </footer>
 
-  <div class="output" id="output"></div>
-  <div id="qrisContainer" style="display: none;">
-    <img id="qrisImage" src="https://files.catbox.moe/v7i6ec.jpg" class="qris-img" alt="QRIS Pinzy" />
+  <!-- Modal -->
+  <div class="overlay" id="popupOverlay" onclick="hideModal(event)">
+    <div class="modal" id="popupModal">
+      <button class="close" onclick="hideModal(event)">&times;</button>
+      <p id="popupText"></p>
+      <img id="popupImage" style="display: none;" />
+    </div>
   </div>
-
-  <footer>© Copyright <strong>𝙋𝙞𝙣𝙯𝙮𝙃𝙤𝙨𝙩</strong></footer>
 
   <script>
-    function showText(text) {
-      document.getElementById('output').innerText = text;
-      document.getElementById('qrisContainer').style.display = 'none';
+    function showModal(text = '', imageUrl = '') {
+      const overlay = document.getElementById('popupOverlay');
+      const textEl = document.getElementById('popupText');
+      const imgEl = document.getElementById('popupImage');
+
+      textEl.textContent = text;
+      if (imageUrl) {
+        imgEl.src = imageUrl;
+        imgEl.style.display = 'block';
+      } else {
+        imgEl.style.display = 'none';
+      }
+
+      overlay.style.display = 'flex';
     }
 
-    function showQR() {
-      document.getElementById('output').innerText = 'Scan QRIS di bawah ini:';
-      document.getElementById('qrisContainer').style.display = 'block';
+    function hideModal(event) {
+      if (event.target.id === 'popupOverlay' || event.target.className === 'close') {
+        document.getElementById('popupOverlay').style.display = 'none';
+      }
     }
   </script>
 </body>
