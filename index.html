@@ -17,31 +17,39 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 20px;
+      text-align: center;
     }
+
     .logo {
       margin-top: 20px;
       width: 180px;
       border-radius: 15px;
     }
+
     .typewriter-container {
       max-width: 90%;
       overflow: hidden;
       white-space: nowrap;
+      margin-top: 20px;
     }
+
     .typewriter {
       border-right: .15em solid #fff;
       animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
       font-size: 20px;
       letter-spacing: .1em;
     }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
+
     @keyframes blink-caret {
       from, to { border-color: transparent }
       50% { border-color: white }
     }
+
     .button {
       margin: 10px;
       padding: 12px 24px;
@@ -53,20 +61,25 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .button:hover {
       background: #333;
     }
+
     .output {
-      margin-top: 10px;
+      margin-top: 20px;
       font-size: 18px;
       color: #ffcc00;
       font-weight: bold;
     }
+
     .qris-img {
       margin-top: 20px;
       max-width: 300px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
+
     footer {
       margin-top: 40px;
       font-size: 14px;
@@ -75,20 +88,20 @@
   </style>
 </head>
 <body>
-  <img src="https://i.ibb.co/Xf0XXZB/pinzy-center.jpg" alt="Pinzy Logo" class="logo" />
+  <img src="https://files.catbox.moe/lxlp0h.jpg" alt="Pinzy Logo" class="logo" />
   
   <div class="typewriter-container">
     <div class="typewriter">𝙋𝘼𝙔𝙈𝙀𝙉𝙏 𝙋𝙄𝙉𝙕𝙔 𝙊𝙁𝙁𝘾</div>
   </div>
 
-  <button class="button" onclick="showText('087889308331 (DANA)')">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
-  <button class="button" onclick="showText('0857xxxxxx (GOPAY)')">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
-  <button class="button" onclick="showText('0812xxxxxx (OVO)')">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showText('62895373244456 (DANA)')">𝙉𝙊𝙈𝙊𝙍 𝘿𝘼𝙉𝘼 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showText('Belum Tersedia (GOPAY)')">𝙉𝙊𝙈𝙊𝙍 𝙂𝙊𝙋𝘼𝙔 𝙋𝙄𝙉𝙕𝙔</button>
+  <button class="button" onclick="showText('Belum Tersedia (OVO)')">𝙉𝙊𝙈𝙊𝙍 𝙊𝙑𝙊 𝙋𝙄𝙉𝙕𝙔</button>
   <button class="button" onclick="showQR()">𝙌𝙍𝙄𝙎 𝙋𝙄𝙉𝙕𝙔</button>
 
   <div class="output" id="output"></div>
   <div id="qrisContainer" style="display: none;">
-    <img id="qrisImage" src="https://i.ibb.co/p3LT5yt/qris-pinzy.png" class="qris-img" alt="QRIS Pinzy" />
+    <img id="qrisImage" src="https://files.catbox.moe/v7i6ec.jpg" class="qris-img" alt="QRIS Pinzy" />
   </div>
 
   <footer>© Copyright <strong>𝙋𝙞𝙣𝙯𝙮𝙃𝙤𝙨𝙩</strong></footer>
